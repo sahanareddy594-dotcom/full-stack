@@ -1,0 +1,15 @@
+<h2>Student List</h2>
+<table border="1">
+<tr><th>ID</th><th>Name</th><th>Course</th><th>Delete</th></tr>
+
+{% for r in data %}
+<tr>
+<td>{{r[0]}}</td>
+<td>{{r[1]}}</td>
+<td>{{r[2]}}</td>
+<td><a href="/delete/{{r[0]}}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/dashboard">Back</a>
