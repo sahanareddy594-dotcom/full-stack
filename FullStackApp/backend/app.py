@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, session
 import sqlite3
     import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="../frontend/templates")
 app.secret_key = "secret"
 
 def init_db():
@@ -128,3 +128,4 @@ if __name__=="__main__":
 
 
 app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
