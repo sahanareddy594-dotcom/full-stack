@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
 import sqlite3
-    import os
+import os
 
 app = Flask(__name__, template_folder="../frontend/templates")
 app.secret_key = "secret"
@@ -28,9 +28,7 @@ def init_db():
     conn.commit()
     conn.close()
 
-
 init_db()
-
 
 @app.route("/register", methods=["GET","POST"])
 def register():
@@ -124,8 +122,6 @@ def logout():
     return redirect("/")
 
 
-if __name__=="__main__":
-
-
-app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
